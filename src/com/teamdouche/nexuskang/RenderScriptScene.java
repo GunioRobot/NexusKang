@@ -30,7 +30,7 @@ public abstract class RenderScriptScene {
     protected RenderScriptGL mRS;
     protected ScriptC mScript;
     protected boolean dirty = false;
-    
+
     public RenderScriptScene(int width, int height) {
         mWidth = width;
         mHeight = height;
@@ -85,11 +85,11 @@ public abstract class RenderScriptScene {
     public boolean isDirty() {
         return dirty;
     }
-    
+
     public void setDirty(boolean isDirty) {
         this.dirty = isDirty;
     }
-    
+
     @SuppressWarnings({"UnusedDeclaration"})
     public void setOffset(float xOffset, float yOffset, int xPixels, int yPixels) {
     }

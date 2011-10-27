@@ -1,12 +1,12 @@
 /*
  * Copyright (C) 2009 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -34,7 +34,7 @@ import android.widget.Toast;
 
 import java.lang.Integer;
 
-public class NexusSettings extends WallpaperSettingsActivity 
+public class NexusSettings extends WallpaperSettingsActivity
 	implements SharedPreferences.OnSharedPreferenceChangeListener  {
 
 	public static final String COLORSCHEME_PREF = "nexus_colorscheme";
@@ -46,7 +46,7 @@ public class NexusSettings extends WallpaperSettingsActivity
   //  private static final String SWEEPERS_PREF = "pref_sweepers";
 
   //  private CheckBoxPreference mSweepersPref;
-    
+
     @Override
 	protected void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
@@ -73,7 +73,7 @@ public class NexusSettings extends WallpaperSettingsActivity
 	public void onSharedPreferenceChanged(SharedPreferences preferences, String key) {
 		if (COLORSCHEME_PREF.equals(key)) {
 			final Resources res = this.getResources();
-			final String[] colorscheme = res.getStringArray(res.getIdentifier("nexus_colorscheme_" + 
+			final String[] colorscheme = res.getStringArray(res.getIdentifier("nexus_colorscheme_" +
 				preferences.getString(key, "softblues"), "array", "com.teamdouche.nexuskang"));
 
 			SharedPreferences.Editor editor = preferences.edit();
@@ -106,16 +106,16 @@ public class NexusSettings extends WallpaperSettingsActivity
         else if (preference.getKey().equals("custom_colors2")) {
             int i = Color.parseColor(getPreferenceManager().getSharedPreferences().getString(COLOR2_PREF, "#333333"));
             new UberColorPickerDialog(this, mColor2Listener, i, false).show();
-            return true;        
+            return true;
         }
         else if (preference.getKey().equals("custom_colors3")) {
             int i = Color.parseColor(getPreferenceManager().getSharedPreferences().getString(COLOR3_PREF, "#333333"));
             new UberColorPickerDialog(this, mColor3Listener, i, false).show();
             return true;
-        } 
-        else if (preference.getKey().equals("rDefault")) {  
+        }
+        else if (preference.getKey().equals("rDefault")) {
             final Resources res = this.getResources();
-			final String[] colorscheme = res.getStringArray(res.getIdentifier("nexus_colorscheme_" + 
+			final String[] colorscheme = res.getStringArray(res.getIdentifier("nexus_colorscheme_" +
 				getPreferenceManager().getSharedPreferences().getString(COLORSCHEME_PREF, "softblues"), "array", "com.teamdouche.nexuskang"));
 
 			SharedPreferences.Editor editor = getPreferenceManager().getSharedPreferences().edit();
@@ -136,10 +136,10 @@ public class NexusSettings extends WallpaperSettingsActivity
             getClass().getName());
             startActivity(new Intent().setComponent(comp));
             Toast.makeText(getApplicationContext(), "Settings reset", Toast.LENGTH_SHORT).show();
-            
+
             return true;
         }
-            
+
       //  else if (preference.getKey().equals("pref_sweepers")) {
        //     if (mSweepersPref.isChecked()) {
         //        value = 1;

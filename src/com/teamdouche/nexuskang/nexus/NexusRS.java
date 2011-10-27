@@ -262,9 +262,9 @@ class NexusRS extends RenderScriptScene implements
         public float color3r, color3g, color3b;
 
         public int mode;
-        
+
         public float speed;
- 
+
     }
 
     static class CommandState {
@@ -275,7 +275,7 @@ class NexusRS extends RenderScriptScene implements
         public int command;
 
         public int pSize, hGlowSize, tailSize;
-        
+
         public float sVariance;
     }
 
@@ -285,7 +285,7 @@ class NexusRS extends RenderScriptScene implements
         mWorldState.rotate = mWidth > mHeight ? 1 : 0;
         mWorldState.isPreview = isPreview() ? 1 : 0;
 
-        
+
 
         mWorldState.color0r = mPreset.color0r;
         mWorldState.color0g = mPreset.color0g;
@@ -327,7 +327,7 @@ class NexusRS extends RenderScriptScene implements
         mCommand.y = -1;
 
         mCommand.command = 0;
-        
+
         mCommandType = Type.createFromClass(mRS, CommandState.class, 1, "DropState");
         mCommandAllocation = Allocation.createTyped(mRS, mCommandType);
         mCommandAllocation.data(mCommand);
@@ -431,18 +431,18 @@ class NexusRS extends RenderScriptScene implements
 
         if ("android.wallpaper.tap".equals(action)) {
             IHardwareService hardware = IHardwareService.Stub.asInterface(ServiceManager.getService("hardware"));
-            
+
             // Get the colors from the preset
-            int colorR = (int) (mPreset.color0r * 255.0);                                                                        
-            int colorG = (int) (mPreset.color0g * 255.0);                                                            
+            int colorR = (int) (mPreset.color0r * 255.0);
+            int colorG = (int) (mPreset.color0g * 255.0);
             int colorB = (int) (mPreset.color0b * 255.0);
-                                   
-            int colorValue = Color.rgb(colorR, colorG, colorB); 
-            /*            
+
+            int colorValue = Color.rgb(colorR, colorG, colorB);
+            /*
             try {
                 // flash the trackball on tap
-                hardware.pulseBreathingLightColor(colorValue); 
-                
+                hardware.pulseBreathingLightColor(colorValue);
+
             } catch (RemoteException re) {
                 Log.e("NexusLWP", "Could not preview LED color", re);
             }

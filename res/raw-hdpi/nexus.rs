@@ -136,7 +136,7 @@ void drawPulses(struct pulse_s * pulseSet, int setSize) {
     int TRAIL_SIZE = Command->tailSize;
    // int Sweep = Command->mSweep;
   ///  int fatglow = State->rectglow;
-    
+
     int i;
     for (i=0; i<setSize; i++) {
     	struct pulse_s * p = &pulseSet[i];
@@ -162,7 +162,7 @@ void drawPulses(struct pulse_s * pulseSet, int setSize) {
                  //   }
 
 	                drawRect(x, y, xx, y + PULSE_SIZE, 0.0f);
-                
+
               //      if (Sweep == 0) {
 	                    bindTexture(NAMED_PFTexture, 0, NAMED_TGlow);
               //      }
@@ -205,8 +205,8 @@ void drawPulses(struct pulse_s * pulseSet, int setSize) {
 	                setColor(p->color);
 	                bindTexture(NAMED_PFTexture, 0, NAMED_TPulse);
 	                drawRect(x, y, x + PULSE_SIZE, yy, 0.0f);
-                  
-                //   if(Sweep == 0) {  
+
+                //   if(Sweep == 0) {
 	                    bindTexture(NAMED_PFTexture, 0, NAMED_TGlow);
                //     }
 

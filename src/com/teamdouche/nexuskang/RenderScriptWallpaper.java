@@ -106,7 +106,7 @@ public abstract class RenderScriptWallpaper<T extends RenderScriptScene> extends
                 mRenderer.init(mRs, getResources(), isPreview());
             }
         }
-        
+
         @Override
         public void onOffsetsChanged(float xOffset, float yOffset,
                 float xStep, float yStep, int xPixels, int yPixels) {
